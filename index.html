@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>kenneth2001</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Off Canvas Menu -->
+    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+    <!-- Color Switcher -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vegas.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+  </head>
+  <body>
+
+    <div class="bg-wraper overlay has-vignette">
+      <div id="example" class="slider opacity-50 vegas-container" style="height: 983px;"></div>
+    </div>
+
+    
+
+    
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/vegas.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script> 
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+
+    <script type="text/javascript">
+      $("#example").vegas({
+          timer: true,
+          delay: 6000,
+          transitionDuration: 2000,
+          transition: "blur",
+          slides: [
+              { src: "assets/img/slide1.jpg" },
+              { src: "assets/img/slide2.jpg" },
+              { src: "assets/img/slide3.jpg" }
+          ]
+      });
+    </script>
+    
+    <!-- Preloader -->
+    <div id="preloader">
+      <script type="text/javascript">
+        $("#preloader")
+        .countdown("2019/01/01", function(event) {
+          $(this).text(
+            event.strftime('%D days %H:%M:%S')
+          );
+        });
+      </script>
+    </div>
+    <!-- End Preloader -->
+    
+    <!-- Coundown Section Start -->
+    <section class="countdown-timer">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="heading-count">
+              <h2>WE ARE LAUNCHING IN</h2>
+            </div>
+          </div>			
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="row time-countdown justify-content-center">
+					<div id="clock" class="time-count">
+							<p id="demo"></p>
+							<script>
+							// Set the date we're counting down to
+							var countDownDate = new Date("dec 31, 2018 23:59:59").getTime();
+
+							// Update the count down every 1 second
+							var x = setInterval(function() {
+
+							  // Get todays date and time
+							  var now = new Date().getTime();
+
+							  // Find the distance between now and the count down date
+							  var distance = countDownDate - now;
+
+							  // Time calculations for days, hours, minutes and seconds
+							  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+							  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+							  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+							  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+							  // Display the result in the element with id="demo"
+							  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+							  + minutes + "m " + seconds + "s ";
+
+							  // If the count down is finished, write some text 
+							  if (distance < 0) {
+								clearInterval(x);
+								document.getElementById("demo").innerHTML = "EXPIRED";
+							  }
+							}, 1000);
+							</script>
+					</div>
+          </div>
+        </div>
+
+    </section>
+    <!-- Coundown Section End -->
+  </body>
+</html>
