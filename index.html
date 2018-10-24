@@ -27,69 +27,39 @@
   </head>
   <body>
 
-    <div class="bg-wraper overlay has-vignette">
-      <div id="example" class="slider opacity-50 vegas-container" style="height: 983px;"></div>
-    </div>
-
-    <!-- Coundown Section Start -->
-    <section class="countdown-timer">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-12 col-xs-12 text-center">
-            <div class="heading-count">
-              <h2>WE ARE COMING SOON</h2>
-              <p class="text-light">Our exciting new website is coming soon! Check back later...</p>
-            </div>
-          </div>
-          <div class="col-lg-8 col-md-12 col-xs-12">
-            <div class="row time-countdown line-right justify-content-center">
-              <div id="clock" class="time-count"></div>
-            </div>
-            <div class="subscribe-form text-center">
-              <h4>Subscribe to our newsletter</h4>
-              <form class="form-inline">
-                <input name="email" class="form-control btn-rounded" placeholder="Email Address" type="email"> 
-                <button class="btn btn-common btn-round" type="submit">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Coundown Section End -->
-
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="loader" id="loader-1"></div>
-    </div>
-    <!-- End Preloader -->
-
-   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/vegas.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/classie.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.slicknav.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/form-validator.min.js"></script>
-    <script src="assets/js/contact-form-script.min.js"></script>
-
-    <script type="text/javascript">
-      $("#example").vegas({
-          timer: false,
-          delay: 6000,
-          transitionDuration: 2000,
-          transition: "blur",
-          slides: [
-              { src: "assets/img/slide1.jpg" }
-          ]
-      });
-    </script>
-      
+<p id="demo">
+			<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("dec 31, 2018 23:59:59").getTime();
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+			  // Get todays date and time
+			  var now = new Date().getTime();
+			  // Find the distance between now and the count down date
+			  var distance = countDownDate - now;
+			  // Time calculations for days, hours, minutes and seconds
+			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			  // Display the result in the element with id="demo"
+			 document.getElementById("demo").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+			  document.getElementById("day").innerHTML = days + "d " ;
+			  document.getElementById("hours").innerHTML =  hours + "h " ;
+			  document.getElementById("minutes").innerHTML =  minutes + "m ";
+			  document.getElementById("seconds").innerHTML =  seconds + "s ";
+			  
+			  // If the count down is finished, write some text 
+			  if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+			  }
+			}, 1000);
+			</script>
+</p>
+<p id = "day"></p>
+<p id = "hours"></p>
+<p id = "minutes"></p>
+<p id = "seconds"></p>
   </body>
 </html>
